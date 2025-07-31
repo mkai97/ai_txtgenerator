@@ -25,7 +25,7 @@ export const WZX__APP_INFO: AppInfo = {
 }
 
 // 应用配置 公共配置
-export const IS_WORKFLOW = `${process.env.NEXT_PUBLIC_APP_TYPE_WORKFLOW}` === 'true'
+export const IS_WORKFLOW = `${process.env.NEXT_PUBLIC_APP_TYPE_WORKFLOW}` || true
 
 export const API_PREFIX = '/api'
 
@@ -34,7 +34,6 @@ export const LOCALE_COOKIE_NAME = 'locale'
 export const DEFAULT_VALUE_MAX_LEN = 48
 
 export type MENU_ITEMS = 'default' | 'WZX'
-
 
 export function getAppInfo(selectedMenu: string): any {
   if (selectedMenu === 'WZX') {

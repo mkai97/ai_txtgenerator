@@ -22,7 +22,7 @@ export function useAppConfig(tabId: TabId): Config {
                 APP_ID: cf.default_APP_ID!,
                 API_KEY: cf.default_API_KEY!,
                 API_URL: cf.default_API_URL!,
-                IS_WORKFLOW: cf.IS_WORKFLOW,
+                IS_WORKFLOW: true,
                 AppInfo: cf.default_APP_INFO,
             },
             WZX: {

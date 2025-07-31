@@ -27,7 +27,7 @@ export const setSession = (sessionId: string) => {
 export const createClient = (request: NextRequest) => {
   // 获取查询参数最后一个 selectedMenu 然后删除selectedMenu 参数
   const url = request.nextUrl
-  const selectedMenu = url.searchParams.get('selectedMenu') || 'default' 
+  const selectedMenu = url.searchParams.get('selectedMenu') || 'default'
   url.searchParams.delete('selectedMenu')
 
   const { APP_ID, API_KEY, API_URL } = getAppInfo(selectedMenu || 'default')

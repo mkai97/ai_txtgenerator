@@ -203,7 +203,7 @@ const baseFetch = (url: string, fetchOptions: any, { needAllResponseContent }: I
 
   const urlPrefix = API_PREFIX
 
-  let urlWithPrefix = `${urlPrefix}${url.startsWith('/') ? url : `/${url}`}`
+  let urlWithPrefix = `${urlPrefix}${url.startsWith('/') ? url : `/${url}`}${!url.includes('?') ? '?' : '&'}selectedMenu=${localStorage.getItem('selectedMenu') || 'default'}`
 
   const { method, params, body } = options
   // handle query

@@ -293,7 +293,7 @@ const Result: FC<IResultProps> = ({
       {!isCallBatchAPI && (
         (isResponsing && !completionRes)
           ? (
-            <div className='flex h-full w-full justify-center items-center'>
+            <div className='flex items-center justify-center w-full h-full'>
               <Loading type='area' />
             </div>)
           : (

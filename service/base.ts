@@ -281,7 +281,7 @@ const baseFetch = (url: string, fetchOptions: any, { needAllResponseContent }: I
 
 export const upload = (fetchOptions: any): Promise<any> => {
   const urlPrefix = API_PREFIX
-  const urlWithPrefix = `${urlPrefix}/file-upload`
+  const urlWithPrefix = `${urlPrefix}/file-upload?selectedMenu=${localStorage.getItem('selectedMenu') || 'default'}`
   const defaultOptions = {
     method: 'POST',
     url: `${urlWithPrefix}`,
@@ -328,7 +328,7 @@ export const ssePost = (
   }, fetchOptions)
 
   const urlPrefix = API_PREFIX
-  const urlWithPrefix = `${urlPrefix}${url.startsWith('/') ? url : `/${url}`}`
+  const urlWithPrefix = `${urlPrefix}${url.startsWith('/') ? url : `/${url}`}${!url.includes('?') ? '?' : '&'}selectedMenu=${localStorage.getItem('selectedMenu') || 'default'}`
 
   const { body } = options
   if (body)
